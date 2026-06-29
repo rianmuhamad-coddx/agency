@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harga - FlowTask</title>
+  <meta name="description" content="Pilih paket FlowTask yang sesuai untuk tim Anda. Mulai dari gratis hingga enterprise.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-white text-slate-800 antialiased">
+  <div id="navbar"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="bg-slate-50 pt-32 pb-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Harga <span class="text-blue-600">Sederhana & Transparan</span></h1>
+        <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">Pilih paket yang sesuai dengan kebutuhan tim Anda. Upgrade atau downgrade kapan saja.</p>
+        
+        <!-- Toggle -->
+        <div class="mt-10 flex items-center justify-center gap-4">
+          <span class="text-sm font-medium text-slate-900">Bulanan</span>
+          <label class="relative inline-flex h-7 w-14 cursor-pointer items-center rounded-full bg-blue-600 transition-colors">
+            <input type="checkbox" id="pricing-toggle" class="sr-only peer">
+            <span class="inline-block h-5 w-5 transform rounded-full bg-white transition-transform translate-x-1 peer-checked:translate-x-8"></span>
+          </label>
+          <span class="text-sm font-medium text-slate-900">Tahunan</span>
+          <span class="ml-2 inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">Hemat 20%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="py-24 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <!-- Free -->
+          <div class="rounded-2xl border border-slate-200 p-8 shadow-sm bg-white">
+            <h3 class="text-lg font-semibold text-slate-900">Free</h3>
+            <p class="mt-2 text-sm text-slate-500">Untuk individu atau tim kecil yang baru memulai.</p>
+            <div class="mt-6 flex items-baseline gap-x-1">
+              <span class="text-4xl font-bold tracking-tight text-slate-900 price-monthly">Rp0</span>
+              <span class="text-4xl font-bold tracking-tight text-slate-900 price-yearly hidden">Rp0</span>
+              <span class="text-sm font-semibold leading-6 text-slate-600 price-period">/bulan</span>
+            </div>
+            <a href="register.html" class="mt-6 block w-full rounded-lg bg-slate-900 px-3 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition-colors">Mulai Gratis</a>
+            <ul class="mt-8 space-y-3">
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Maksimal 5 anggota tim</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">3 proyek aktif</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">1GB storage</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Task management dasar</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span class="text-sm text-slate-400">Time tracking</span></li>
+            </ul>
+          </div>
+
+          <!-- Pro -->
+          <div class="rounded-2xl border-2 border-blue-600 p-8 shadow-xl bg-white relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-semibold text-white">Most Popular</div>
+            <h3 class="text-lg font-semibold text-slate-900">Pro</h3>
+            <p class="mt-2 text-sm text-slate-500">Untuk tim yang berkembang dan membutuhkan lebih banyak fitur.</p>
+            <div class="mt-6 flex items-baseline gap-x-1">
+              <span class="text-4xl font-bold tracking-tight text-slate-900 price-monthly">Rp149rb</span>
+              <span class="text-4xl font-bold tracking-tight text-slate-900 price-yearly hidden">Rp1,43jt</span>
+              <span class="text-sm font-semibold leading-6 text-slate-600 price-period">/bulan</span>
+            </div>
+            <a href="register.html" class="mt-6 block w-full rounded-lg bg-blue-600 px-3 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 transition-colors">Coba Pro Gratis 14 Hari</a>
+            <ul class="mt-8 space-y-3">
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Maksimal 25 anggota tim</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Proyek unlimited</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">50GB storage</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Time tracking & reporting</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Integrasi dengan 20+ tools</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Prioritas support</span></li>
+            </ul>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="rounded-2xl border border-slate-200 p-8 shadow-sm bg-white">
+            <h3 class="text-lg font-semibold text-slate-900">Enterprise</h3>
+            <p class="mt-2 text-sm text-slate-500">Untuk organisasi besar dengan kebutuhan khusus.</p>
+            <div class="mt-6 flex items-baseline gap-x-1">
+              <span class="text-4xl font-bold tracking-tight text-slate-900 price-monthly">Rp499rb</span>
+              <span class="text-4xl font-bold tracking-tight text-slate-900 price-yearly hidden">Rp4,79jt</span>
+              <span class="text-sm font-semibold leading-6 text-slate-600 price-period">/bulan</span>
+            </div>
+            <a href="contact.html" class="mt-6 block w-full rounded-lg bg-slate-900 px-3 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition-colors">Hubungi Sales</a>
+            <ul class="mt-8 space-y-3">
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Anggota tim unlimited</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Proyek unlimited</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Storage unlimited</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">SSO & advanced security</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">Dedicated account manager</span></li>
+              <li class="flex gap-3"><svg class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-slate-600">SLA & custom contract</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing FAQ -->
+    <section class="py-24 bg-slate-50">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Pertanyaan Seputar Harga</h2>
+        <div class="space-y-4">
+          <div class="rounded-xl bg-white border border-slate-200 overflow-hidden">
+            <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-slate-900">
+              Apakah ada masa percobaan gratis?
+              <svg class="faq-icon h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="hidden px-6 pb-4 text-slate-600">Ya, paket Pro bisa dicoba gratis selama 14 hari tanpa memerlukan kartu kredit.</div>
+          </div>
+          <div class="rounded-xl bg-white border border-slate-200 overflow-hidden">
+            <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-slate-900">
+              Bisakah saya upgrade atau downgrade kapan saja?
+              <svg class="faq-icon h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="hidden px-6 pb-4 text-slate-600">Tentu saja. Anda bisa mengubah paket kapan saja sesuai kebutuhan tim.</div>
+          </div>
+          <div class="rounded-xl bg-white border border-slate-200 overflow-hidden">
+            <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-slate-900">
+              Metode pembayaran apa yang diterima?
+              <svg class="faq-icon h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="hidden px-6 pb-4 text-slate-600">Kami menerima transfer bank, kartu kredit, dan pembayaran digital populer.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
