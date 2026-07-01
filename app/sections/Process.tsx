@@ -37,16 +37,17 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="bg-white px-4 py-24 sm:px-6 lg:px-8">
+    <section id="process" className="px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
+          <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
             How We Work
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            From First Call to Shipped Product in Weeks
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            From First Call to Shipped Product in{" "}
+            <span className="gradient-text">Weeks</span>
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-slate-400">
             No bloated process. Just a clear path from idea to reality.
           </p>
         </AnimatedSection>
@@ -57,20 +58,20 @@ export default function Process() {
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 h-full"
+                className="glass-card rounded-2xl p-6 h-full"
               >
                 <div className="flex items-center justify-between">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600 text-white">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-600 text-white shadow-lg shadow-indigo-500/25">
                     <item.icon className="h-6 w-6" />
                   </div>
-                  <span className="text-3xl font-extrabold text-slate-200">
+                  <span className="text-3xl font-extrabold text-slate-700">
                     {item.step}
                   </span>
                 </div>
-                <h3 className="mt-6 text-lg font-bold text-slate-900">
+                <h3 className="mt-6 text-lg font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                <p className="mt-3 text-sm leading-relaxed text-slate-400">
                   {item.description}
                 </p>
               </motion.div>

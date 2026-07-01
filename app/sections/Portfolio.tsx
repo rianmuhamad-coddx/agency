@@ -34,16 +34,18 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-slate-50 px-4 py-24 sm:px-6 lg:px-8">
+    <section id="portfolio" className="relative px-4 py-24 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-indigo-950/20 to-slate-950" />
       <div className="mx-auto max-w-7xl">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
+          <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
             Selected Work
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Real Projects Built for Real Startups
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Real Projects Built for{" "}
+            <span className="gradient-text">Real Startups</span>
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-slate-400">
             A glimpse of what we can build together.
           </p>
         </AnimatedSection>
@@ -54,26 +56,27 @@ export default function Portfolio() {
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
-                className="group flex flex-col rounded-3xl border border-slate-200 bg-white p-8 shadow-sm h-full"
               >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-700 transition-colors group-hover:bg-indigo-600 group-hover:text-white">
-                  <project.icon className="h-6 w-6" />
-                </div>
-                <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-indigo-600">
-                  {project.category}
-                </p>
-                <h3 className="mt-2 text-xl font-bold text-slate-900">
-                  {project.title}
-                </h3>
-                <p className="mt-4 flex-1 text-base leading-7 text-slate-600">
-                  {project.description}
-                </p>
                 <Link
                   href={`/portfolio/${project.slug}`}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition-colors group-hover:text-indigo-700"
+                  className="group flex flex-col rounded-3xl p-8 glass-card h-full"
                 >
-                  Read case study
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10 transition-colors group-hover:from-indigo-500/30 group-hover:to-cyan-500/30">
+                    <project.icon className="h-6 w-6" />
+                  </div>
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-cyan-400">
+                    {project.category}
+                  </p>
+                  <h3 className="mt-2 text-xl font-bold text-white">
+                    {project.title}
+                  </h3>
+                  <p className="mt-4 flex-1 text-base leading-7 text-slate-400">
+                    {project.description}
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 group-hover:text-cyan-300">
+                    Read case study
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </Link>
               </motion.div>
             </StaggerItem>

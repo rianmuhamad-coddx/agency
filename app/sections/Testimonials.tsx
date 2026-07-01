@@ -30,14 +30,15 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white px-4 py-24 sm:px-6 lg:px-8">
+    <section className="px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
+          <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
             What Founders Say
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Trusted by Founders Who Move Fast
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Trusted by Founders Who{" "}
+            <span className="gradient-text">Move Fast</span>
           </h2>
         </AnimatedSection>
 
@@ -47,21 +48,21 @@ export default function Testimonials() {
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
-                className="relative rounded-3xl border border-slate-200 bg-slate-50 p-8 h-full"
+                className="glass-card relative rounded-3xl p-8 h-full"
               >
-                <Quote className="h-8 w-8 text-indigo-200" />
-                <p className="mt-4 text-base leading-7 text-slate-700">
+                <Quote className="h-8 w-8 text-indigo-400/40" />
+                <p className="mt-4 text-base leading-7 text-slate-300">
                   &ldquo;{item.quote}&rdquo;
                 </p>
                 <div className="mt-6 flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 text-sm font-bold text-white">
                     {item.name[0]}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">
+                    <p className="text-sm font-semibold text-white">
                       {item.name}
                     </p>
-                    <p className="text-xs text-slate-600">
+                    <p className="text-xs text-slate-400">
                       {item.role}, {item.company}
                     </p>
                   </div>

@@ -47,11 +47,14 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const inputClassName =
+    "mt-2 block w-full rounded-xl border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-slate-500 backdrop-blur-sm transition-colors focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid gap-6 md:grid-cols-2">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-slate-700">
+          <label htmlFor="name" className="block text-sm font-medium text-slate-300">
             Name
           </label>
           <input
@@ -61,12 +64,12 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+            className={inputClassName}
             placeholder="Your name"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-slate-700">
+          <label htmlFor="email" className="block text-sm font-medium text-slate-300">
             Email
           </label>
           <input
@@ -76,7 +79,7 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+            className={inputClassName}
             placeholder="you@startup.com"
           />
         </div>
@@ -84,7 +87,7 @@ export default function ContactForm() {
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-slate-700">
+          <label htmlFor="company" className="block text-sm font-medium text-slate-300">
             Company / Startup
           </label>
           <input
@@ -93,12 +96,12 @@ export default function ContactForm() {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+            className={inputClassName}
             placeholder="Startup name"
           />
         </div>
         <div>
-          <label htmlFor="budget" className="block text-sm font-medium text-slate-700">
+          <label htmlFor="budget" className="block text-sm font-medium text-slate-300">
             Estimated Budget
           </label>
           <select
@@ -106,19 +109,29 @@ export default function ContactForm() {
             name="budget"
             value={formData.budget}
             onChange={handleChange}
-            className="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+            className={inputClassName}
           >
-            <option value="">Select a range</option>
-            <option value="Under $5,000">Under $5,000</option>
-            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-            <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-            <option value="$25,000+">$25,000+</option>
+            <option value="" className="bg-slate-900">
+              Select a range
+            </option>
+            <option value="Under $5,000" className="bg-slate-900">
+              Under $5,000
+            </option>
+            <option value="$5,000 - $10,000" className="bg-slate-900">
+              $5,000 - $10,000
+            </option>
+            <option value="$10,000 - $25,000" className="bg-slate-900">
+              $10,000 - $25,000
+            </option>
+            <option value="$25,000+" className="bg-slate-900">
+              $25,000+
+            </option>
           </select>
         </div>
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700">
+        <label htmlFor="message" className="block text-sm font-medium text-slate-300">
           Tell us about your project
         </label>
         <textarea
@@ -128,7 +141,7 @@ export default function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={handleChange}
-          className="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+          className={inputClassName}
           placeholder="What are you building? What do you need help with?"
         />
       </div>
@@ -136,7 +149,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 text-base font-semibold text-white transition-all hover:bg-indigo-700 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-500/40 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status === "submitting" ? (
           <>
@@ -157,7 +170,7 @@ export default function ContactForm() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="flex items-center gap-3 rounded-xl bg-green-50 p-4 text-green-800"
+            className="flex items-center gap-3 rounded-xl border border-green-500/20 bg-green-500/10 p-4 text-green-400 backdrop-blur-sm"
           >
             <CheckCircle className="h-5 w-5 flex-shrink-0" />
             <p className="text-sm font-medium">
@@ -170,7 +183,7 @@ export default function ContactForm() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="flex items-center gap-3 rounded-xl bg-red-50 p-4 text-red-800"
+            className="flex items-center gap-3 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-red-400 backdrop-blur-sm"
           >
             <AlertCircle className="h-5 w-5 flex-shrink-0" />
             <p className="text-sm font-medium">

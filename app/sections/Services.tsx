@@ -36,14 +36,16 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-slate-50 px-4 py-24 sm:px-6 lg:px-8">
+    <section id="services" className="relative px-4 py-24 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950" />
       <div className="mx-auto max-w-7xl">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
+          <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
             What We Build
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Two Services. One Team. Zero Coordination Headaches.
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Two Services. One Team.{" "}
+            <span className="gradient-text">Zero Headaches.</span>
           </h2>
         </AnimatedSection>
 
@@ -53,28 +55,28 @@ export default function Services() {
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
-                className="group relative flex flex-col rounded-3xl border border-slate-200 bg-white p-8 shadow-sm h-full"
+                className="glass-card group relative flex flex-col rounded-3xl p-8 h-full"
               >
-                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-700 transition-colors group-hover:bg-indigo-600 group-hover:text-white">
+                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10">
                   <service.icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-6 text-2xl font-bold text-slate-900">
+                <h3 className="mt-6 text-2xl font-bold text-white">
                   {service.title}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-slate-600">
+                <p className="mt-4 text-base leading-7 text-slate-400">
                   {service.description}
                 </p>
                 <ul className="mt-6 space-y-3">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-slate-700">
-                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-indigo-600" />
+                    <li key={item} className="flex items-start gap-3 text-slate-300">
+                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" />
                       {item}
                     </li>
                   ))}
                 </ul>
                 <Link
                   href={service.href}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition-colors group-hover:text-indigo-700"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-colors group-hover:text-cyan-300"
                 >
                   {service.cta}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

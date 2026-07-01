@@ -18,12 +18,12 @@ export default function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="border-t border-slate-200 bg-white px-4 py-12 sm:px-6 lg:px-8"
+      className="border-t border-slate-800/50 bg-slate-950/80 px-4 py-12 backdrop-blur-xl sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-slate-900">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">
+          <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-white">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 text-white shadow-lg shadow-indigo-500/25">
               M
             </span>
             MOT
@@ -34,7 +34,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-indigo-600"
+                className="text-sm font-medium text-slate-400 transition-colors hover:text-white"
               >
                 {link.label}
               </Link>
@@ -44,14 +44,14 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <a
               href="mailto:hello@mot.id"
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-indigo-600"
+              className="text-sm font-medium text-slate-400 transition-colors hover:text-white"
             >
               hello@mot.id
             </a>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-slate-100 pt-8 text-center">
+        <div className="mt-8 border-t border-slate-800/50 pt-8 text-center">
           <p className="text-sm text-slate-500">
             © {new Date().getFullYear()} MOT. All rights reserved.
           </p>

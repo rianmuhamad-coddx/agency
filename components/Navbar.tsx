@@ -34,13 +34,13 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full border-b border-slate-800/50 bg-slate-950/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-bold tracking-tight text-slate-900"
+          className="flex items-center gap-2 text-xl font-bold tracking-tight text-white"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 text-white shadow-lg shadow-indigo-500/25">
             M
           </span>
           MOT
@@ -57,7 +57,7 @@ export default function Navbar() {
               >
                 <button
                   type="button"
-                  className="flex items-center gap-1 text-sm font-medium text-slate-600 transition-colors hover:text-indigo-600"
+                  className="flex items-center gap-1 text-sm font-medium text-slate-300 transition-colors hover:text-white"
                 >
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
@@ -69,13 +69,13 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full mt-2 w-56 rounded-xl border border-slate-200 bg-white py-2 shadow-lg"
+                      className="absolute left-0 top-full mt-2 w-56 rounded-xl border border-slate-700/50 bg-slate-900/90 py-2 shadow-xl backdrop-blur-xl"
                     >
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-indigo-600"
+                          className="block px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800/50 hover:text-white"
                         >
                           {child.label}
                         </Link>
@@ -88,7 +88,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-indigo-600"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
               >
                 {link.label}
               </Link>
@@ -98,13 +98,13 @@ export default function Navbar() {
             <>
               <Link
                 href={handleHomeAnchor("#process")}
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-indigo-600"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
               >
                 Process
               </Link>
               <Link
                 href={handleHomeAnchor("#testimonials")}
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-indigo-600"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
               >
                 Testimonials
               </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-4 md:flex">
           <Link
             href="/contact"
-            className="inline-flex h-10 items-center justify-center rounded-full bg-indigo-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 px-5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-500/40"
           >
             Book a Call
           </Link>
@@ -123,7 +123,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 md:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-slate-300 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -132,19 +132,19 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="border-t border-slate-100 bg-white md:hidden">
+        <div className="border-t border-slate-800/50 bg-slate-950/95 backdrop-blur-xl md:hidden">
           <div className="space-y-1 px-4 py-4">
             {navLinks.map((link) =>
               link.children ? (
                 <div key={link.label}>
-                  <p className="px-3 py-2 text-sm font-semibold text-slate-900">
+                  <p className="px-3 py-2 text-sm font-semibold text-white">
                     {link.label}
                   </p>
                   {link.children.map((child) => (
                     <Link
                       key={child.href}
                       href={child.href}
-                      className="block rounded-md px-6 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-indigo-600"
+                      className="block rounded-md px-6 py-2 text-sm font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white"
                       onClick={() => setIsOpen(false)}
                     >
                       {child.label}
@@ -155,7 +155,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-indigo-600"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -166,14 +166,14 @@ export default function Navbar() {
               <>
                 <Link
                   href={handleHomeAnchor("#process")}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-indigo-600"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white"
                   onClick={() => setIsOpen(false)}
                 >
                   Process
                 </Link>
                 <Link
                   href={handleHomeAnchor("#testimonials")}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-indigo-600"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white"
                   onClick={() => setIsOpen(false)}
                 >
                   Testimonials
@@ -182,7 +182,7 @@ export default function Navbar() {
             )}
             <Link
               href="/contact"
-              className="mt-4 block rounded-full bg-indigo-600 px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-indigo-700"
+              className="mt-4 block rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 px-5 py-2.5 text-center text-sm font-semibold text-white shadow-lg shadow-indigo-500/25"
               onClick={() => setIsOpen(false)}
             >
               Book a Call

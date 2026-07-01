@@ -46,16 +46,19 @@ export default function PortfolioPage() {
     <>
       <Navbar />
       <main>
-        <section className="bg-slate-50 px-4 py-24 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden px-4 pb-24 pt-36 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 blur-3xl" />
+          </div>
           <div className="mx-auto max-w-4xl text-center">
             <AnimatedSection>
-              <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
+              <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
                 Portfolio
               </p>
-              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-                Selected Work
+              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                Selected <span className="gradient-text">Work</span>
               </h1>
-              <p className="mt-6 text-lg leading-8 text-slate-600">
+              <p className="mt-6 text-lg leading-8 text-slate-400">
                 A collection of agentic AI systems and websites we&apos;ve built for
                 startups.
               </p>
@@ -63,41 +66,42 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className="bg-white px-4 py-24 sm:px-6 lg:px-8">
+        <section className="relative px-4 py-24 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-indigo-950/20 to-slate-950" />
           <div className="mx-auto max-w-7xl">
             <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((project) => (
                 <StaggerItem key={project.title}>
                   <Link
                     href={`/portfolio/${project.slug}`}
-                    className="group flex flex-col rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all hover:-translate-y-1 hover:border-indigo-200 hover:shadow-md h-full"
+                    className="group flex flex-col rounded-3xl glass-card p-8 h-full transition-transform duration-300 hover:-translate-y-2"
                   >
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-700 transition-colors group-hover:bg-indigo-600 group-hover:text-white">
-                      <project.icon className="h-6 w-6" />
-                    </div>
-                    <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-indigo-600">
-                      {project.category}
-                    </p>
-                    <h2 className="mt-2 text-xl font-bold text-slate-900">
-                      {project.title}
-                    </h2>
-                    <p className="mt-4 flex-1 text-base leading-7 text-slate-600">
-                      {project.description}
-                    </p>
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 group-hover:text-indigo-700">
-                      Read case study
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10 transition-colors group-hover:from-indigo-500/30 group-hover:to-cyan-500/30">
+                        <project.icon className="h-6 w-6" />
+                      </div>
+                      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-cyan-400">
+                        {project.category}
+                      </p>
+                      <h2 className="mt-2 text-xl font-bold text-white">
+                        {project.title}
+                      </h2>
+                      <p className="mt-4 flex-1 text-base leading-7 text-slate-400">
+                        {project.description}
+                      </p>
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full border border-slate-700/50 bg-slate-900/50 px-3 py-1 text-xs font-medium text-slate-300 backdrop-blur-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 group-hover:text-cyan-300">
+                        Read case study
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
                   </Link>
                 </StaggerItem>
               ))}
