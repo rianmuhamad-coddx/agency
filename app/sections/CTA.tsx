@@ -1,55 +1,62 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Button } from "@/components/ui/Button";
+import { GlowOrb } from "@/components/ui/GlowOrb";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
 export default function CTA() {
   return (
-    <section id="contact" className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-950 via-slate-950 to-cyan-950" />
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/4 top-0 h-[400px] w-[400px] rounded-full bg-indigo-500/10 blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-cyan-500/10 blur-3xl" />
-      </div>
+    <section id="contact" className="relative overflow-hidden py-24 sm:py-32">
+      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-indigo-950 via-slate-950 to-cyan-950" />
 
-      <div className="mx-auto max-w-4xl text-center">
-        <AnimatedSection>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Ready to Build{" "}
-            <span className="gradient-text">Smarter?</span>
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-slate-400">
-            Book a free 30-minute strategy call. We&apos;ll map out what to build
-            first — whether it&apos;s an AI agent, a website, or both.
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-500/40"
-            >
-              Book a Free Call
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-            <Link
-              href="mailto:hello@mot.id?subject=Project%20Inquiry"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-900/50 px-8 text-base font-semibold text-white backdrop-blur-md transition-colors hover:bg-slate-800/50"
-            >
-              <Mail className="h-5 w-5" />
-              Send an Inquiry
-            </Link>
-          </div>
-          <p className="mt-6 text-sm text-slate-400">
-            Prefer email? Reach us at{" "}
-            <a
-              href="mailto:hello@mot.id"
-              className="font-semibold text-cyan-400 hover:text-cyan-300"
-            >
-              hello@mot.id
-            </a>
-          </p>
-        </AnimatedSection>
-      </div>
+      <GlowOrb
+        color="indigo"
+        size={480}
+        className="left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2"
+      />
+      <GlowOrb
+        color="cyan"
+        size={420}
+        className="bottom-1/4 right-1/4 translate-x-1/3 translate-y-1/3"
+      />
+
+      <Container>
+        <div className="glass-strong rounded-3xl px-6 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-24">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
+            <SectionHeader
+              heading="Ready to"
+              headingAccent="ship faster?"
+              description="Book a free 30-minute strategy call. We&apos;ll map out what to build first — whether it&apos;s an AI agent, a website, or both."
+            />
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button href="/contact" icon={<ArrowRight className="h-5 w-5" />}>
+                Book a Free Call
+              </Button>
+              <Button
+                href="mailto:hello@mot.id?subject=Project%20Inquiry"
+                variant="secondary"
+                icon={<Mail className="h-5 w-5" />}
+              >
+                Send an Inquiry
+              </Button>
+            </div>
+
+            <p className="mt-6 text-sm text-slate-400">
+              Prefer email? Reach us at{" "}
+              <a
+                href="mailto:hello@mot.id"
+                className="font-semibold text-cyan-400 hover:text-cyan-300"
+              >
+                hello@mot.id
+              </a>
+            </p>
+          </AnimatedSection>
+        </div>
+      </Container>
     </section>
   );
 }

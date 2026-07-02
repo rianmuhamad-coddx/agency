@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 
 const testimonials = [
@@ -30,16 +32,14 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
-            What Founders Say
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Trusted by Founders Who{" "}
-            <span className="gradient-text">Move Fast</span>
-          </h2>
+    <section className="relative py-24 sm:py-32">
+      <Container>
+        <AnimatedSection>
+          <SectionHeader
+            label="What Founders Say"
+            heading="Trusted by Founders Who"
+            headingAccent="Move Fast"
+          />
         </AnimatedSection>
 
         <StaggerContainer className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -48,14 +48,16 @@ export default function Testimonials() {
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
-                className="glass-card relative rounded-3xl p-8 h-full"
+                className="glass-card relative flex h-full flex-col rounded-3xl p-8"
               >
-                <Quote className="h-8 w-8 text-indigo-400/40" />
-                <p className="mt-4 text-base leading-7 text-slate-300">
+                <Quote className="h-10 w-10 text-indigo-400/40" strokeWidth={1.5} />
+
+                <p className="mt-6 flex-1 text-lg leading-relaxed text-slate-300">
                   &ldquo;{item.quote}&rdquo;
                 </p>
-                <div className="mt-6 flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 text-sm font-bold text-white">
+
+                <div className="mt-8 flex items-center gap-4 border-t border-slate-700/30 pt-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 text-base font-bold text-white">
                     {item.name[0]}
                   </div>
                   <div>
@@ -71,7 +73,7 @@ export default function Testimonials() {
             </StaggerItem>
           ))}
         </StaggerContainer>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Bot, Globe, MessageSquare } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Pill } from "@/components/ui/Pill";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 
 const projects = [
@@ -34,20 +37,17 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="relative px-4 py-24 sm:px-6 lg:px-8">
+    <section id="portfolio" className="relative py-24 sm:py-32">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-indigo-950/20 to-slate-950" />
-      <div className="mx-auto max-w-7xl">
-        <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
-            Selected Work
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Real Projects Built for{" "}
-            <span className="gradient-text">Real Startups</span>
-          </h2>
-          <p className="mt-4 text-lg text-slate-400">
-            A glimpse of what we can build together.
-          </p>
+
+      <Container>
+        <AnimatedSection>
+          <SectionHeader
+            label="Selected Work"
+            heading="Real Projects Built for"
+            headingAccent="Real Startups"
+            description="A glimpse of what we can build together."
+          />
         </AnimatedSection>
 
         <StaggerContainer className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -56,33 +56,37 @@ export default function Portfolio() {
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
+                className="h-full"
               >
                 <Link
                   href={`/portfolio/${project.slug}`}
-                  className="group flex flex-col rounded-3xl p-8 glass-card h-full"
+                  className="group flex flex-col overflow-hidden rounded-3xl glass-card h-full"
                 >
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10 transition-colors group-hover:from-indigo-500/30 group-hover:to-cyan-500/30">
-                    <project.icon className="h-6 w-6" />
+                  <div className="relative flex aspect-[16/10] items-center justify-center bg-gradient-to-br from-indigo-500/10 via-slate-900/50 to-cyan-500/10">
+                    <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10 transition-all duration-300 group-hover:from-indigo-500/30 group-hover:to-cyan-500/30 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan-500/10">
+                      <project.icon className="h-10 w-10" />
+                    </div>
                   </div>
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-cyan-400">
-                    {project.category}
-                  </p>
-                  <h3 className="mt-2 text-xl font-bold text-white">
-                    {project.title}
-                  </h3>
-                  <p className="mt-4 flex-1 text-base leading-7 text-slate-400">
-                    {project.description}
-                  </p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 group-hover:text-cyan-300">
-                    Read case study
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
+
+                  <div className="flex flex-1 flex-col p-8">
+                    <Pill className="self-start">{project.category}</Pill>
+                    <h3 className="mt-4 text-xl font-bold text-white">
+                      {project.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-base leading-7 text-slate-400">
+                      {project.description}
+                    </p>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 group-hover:text-cyan-300">
+                      Read case study
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
                 </Link>
               </motion.div>
             </StaggerItem>
           ))}
         </StaggerContainer>
-      </div>
+      </Container>
     </section>
   );
 }
