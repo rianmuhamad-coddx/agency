@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, Lightbulb, Target, Users, Zap } from "lucide-react";
+import { ArrowRight, Target, Rocket, Zap, Eye, Handshake } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/app/sections/Footer";
-import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+import { Container } from "@/components/ui/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Button } from "@/components/ui/Button";
+import { GlowOrb } from "@/components/ui/GlowOrb";
+import {
+  AnimatedSection,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "About — MOT",
@@ -13,24 +20,29 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: Lightbulb,
-    title: "Accessible AI",
-    desc: "We make agentic AI reachable for startups, not just enterprises.",
+    icon: Target,
+    title: "Results first, tools second",
+    desc: "We focus on the outcome your startup needs, not on forcing a specific technology stack.",
+  },
+  {
+    icon: Rocket,
+    title: "Startup-ready",
+    desc: "Our pace, scope, and pricing are shaped around the realities of early-stage companies.",
   },
   {
     icon: Zap,
-    title: "Fast Time-to-Market",
-    desc: "Iterative delivery so your solution ships in weeks, not months.",
+    title: "Move fast, build right",
+    desc: "Speed matters, but never at the cost of a foundation that can scale as you grow.",
   },
   {
-    icon: Users,
-    title: "True Partnership",
-    desc: "We grow with you as a long-term tech extension of your team.",
+    icon: Eye,
+    title: "Transparent by design",
+    desc: "You always know what we are building, why we made a decision, and where the project stands.",
   },
   {
-    icon: Target,
-    title: "One Team, Two Needs",
-    desc: "AI systems and websites built together, under one roof.",
+    icon: Handshake,
+    title: "Long-term minded",
+    desc: "Every solution is built with the assumption that your startup will evolve and expand.",
   },
 ];
 
@@ -52,21 +64,30 @@ const team = [
   },
 ];
 
+const stats = [
+  { value: "12+", label: "Projects shipped" },
+  { value: "3", label: "Weeks avg delivery" },
+  { value: "95%", label: "Client retention" },
+  { value: "100%", label: "Startup focus" },
+];
+
 export default function AboutPage() {
   return (
     <>
       <Navbar />
       <main>
         <section className="relative overflow-hidden px-4 pb-24 pt-36 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 blur-3xl" />
-          </div>
-          <div className="mx-auto max-w-4xl text-center">
-            <AnimatedSection>
+          <GlowOrb
+            color="indigo"
+            size={600}
+            className="left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"
+          />
+          <Container>
+            <AnimatedSection className="mx-auto max-w-4xl text-center">
               <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
                 About MOT
               </p>
-              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
                 We Build the{" "}
                 <span className="gradient-text">Intelligence</span> Behind Your
                 Startup
@@ -78,18 +99,22 @@ export default function AboutPage() {
                 founders from idea to launch.
               </p>
             </AnimatedSection>
-          </div>
+          </Container>
         </section>
 
         <section className="relative px-4 py-24 sm:px-6 lg:px-8">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950" />
-          <div className="mx-auto max-w-7xl">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <Container>
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
               <AnimatedSection>
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  Why We <span className="gradient-text">Exist</span>
-                </h2>
-                <div className="mt-6 space-y-4 text-lg leading-8 text-slate-400">
+                <SectionHeader
+                  label="Our Story"
+                  heading="Why We"
+                  headingAccent="Exist"
+                  align="left"
+                  className="max-w-none text-left"
+                />
+                <div className="mt-8 space-y-4 text-lg leading-8 text-slate-400">
                   <p>
                     Too many great startup ideas stall because the founder lacks
                     the time, team, or budget to build the technology behind it.
@@ -116,24 +141,53 @@ export default function AboutPage() {
                       <h3 className="mt-4 text-lg font-semibold text-white">
                         {value.title}
                       </h3>
-                      <p className="mt-2 text-sm text-slate-400">{value.desc}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                        {value.desc}
+                      </p>
                     </div>
                   </StaggerItem>
                 ))}
               </StaggerContainer>
             </div>
-          </div>
+          </Container>
         </section>
 
         <section className="px-4 py-24 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
+          <Container>
             <AnimatedSection className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Meet the <span className="gradient-text">Team</span>
-              </h2>
-              <p className="mt-4 text-lg text-slate-400">
-                Small team, big impact. We keep things lean so we can move fast.
-              </p>
+              <SectionHeader
+                label="By the Numbers"
+                heading="Small Team,"
+                headingAccent="Real Momentum"
+              />
+            </AnimatedSection>
+            <StaggerContainer className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {stats.map((stat) => (
+                <StaggerItem key={stat.label}>
+                  <div className="glass-card rounded-2xl p-6 text-center">
+                    <p className="font-mono text-4xl font-bold tracking-tight text-white">
+                      {stat.value}
+                    </p>
+                    <p className="mt-2 text-sm font-medium text-slate-400">
+                      {stat.label}
+                    </p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </Container>
+        </section>
+
+        <section className="relative px-4 py-24 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-slate-900/30 to-slate-950" />
+          <Container>
+            <AnimatedSection className="mx-auto max-w-3xl text-center">
+              <SectionHeader
+                label="The People"
+                heading="Meet the"
+                headingAccent="Team"
+                description="Small team, big impact. We keep things lean so we can move fast."
+              />
             </AnimatedSection>
 
             <StaggerContainer className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -154,29 +208,30 @@ export default function AboutPage() {
                 </StaggerItem>
               ))}
             </StaggerContainer>
-          </div>
+          </Container>
         </section>
 
         <section className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8">
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-indigo-950 via-slate-950 to-cyan-950" />
-          <div className="mx-auto max-w-4xl text-center">
-            <AnimatedSection>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Let&apos;s Build Something{" "}
-                <span className="gradient-text">Together</span>
-              </h2>
-              <p className="mt-6 text-lg text-slate-400">
-                Have a project in mind? We&apos;d love to hear about it.
-              </p>
-              <Link
-                href="/contact"
-                className="mt-10 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-500/40"
-              >
-                Start a Conversation
-                <ArrowRight className="h-5 w-5" />
-              </Link>
+          <GlowOrb
+            color="cyan"
+            size={500}
+            className="right-0 top-1/2 -translate-y-1/2 translate-x-1/3"
+          />
+          <Container>
+            <AnimatedSection className="mx-auto max-w-4xl text-center">
+              <SectionHeader
+                heading="Ready to Build Something"
+                headingAccent="Together?"
+                description="Have a project in mind? We would love to hear about it."
+              />
+              <div className="mt-10 flex justify-center">
+                <Button href="/contact" icon={<ArrowRight className="h-5 w-5" />}>
+                  Start a Conversation
+                </Button>
+              </div>
             </AnimatedSection>
-          </div>
+          </Container>
         </section>
       </main>
       <Footer />

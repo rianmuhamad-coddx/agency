@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Phone } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Clock,
+  Calendar,
+  ArrowRight,
+  ChevronDown,
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/app/sections/Footer";
 import ContactForm from "@/components/ContactForm";
+import { Container } from "@/components/ui/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Button } from "@/components/ui/Button";
+import { Pill } from "@/components/ui/Pill";
+import { GlowOrb } from "@/components/ui/GlowOrb";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
@@ -32,23 +45,52 @@ const contactInfo = [
   },
 ];
 
+const faqs = [
+  {
+    question: "What information should I include in my inquiry?",
+    answer:
+      "Share a short description of your product, the problem you are solving, and what you need help with — AI agent, website, or both. Links, timelines, and budget ranges are also helpful.",
+  },
+  {
+    question: "How quickly do you respond?",
+    answer:
+      "We reply to most inquiries within one business day. For urgent requests, feel free to call or message us directly.",
+  },
+  {
+    question: "Do you work with companies that are not startups?",
+    answer:
+      "Our process and pricing are optimized for early-stage startups, but we are open to speaking with any team building something ambitious.",
+  },
+  {
+    question: "What happens during the free strategy call?",
+    answer:
+      "We map your goals, identify the best starting point, outline a lean approach, and give you a rough estimate — no pitch deck required.",
+  },
+];
+
 export default function ContactPage() {
   return (
     <>
       <Navbar />
       <main>
         <section className="relative overflow-hidden px-4 pb-24 pt-36 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 blur-3xl" />
-            <div className="absolute right-0 top-1/3 h-[400px] w-[400px] rounded-full bg-cyan-500/10 blur-3xl" />
-          </div>
-          <div className="mx-auto max-w-4xl text-center">
-            <AnimatedSection>
+          <GlowOrb
+            color="indigo"
+            size={600}
+            className="left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"
+          />
+          <GlowOrb
+            color="cyan"
+            size={400}
+            className="right-0 top-1/3 translate-x-1/3"
+          />
+          <Container>
+            <AnimatedSection className="mx-auto max-w-4xl text-center">
               <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
                 Contact
               </p>
-              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-                Let&apos;s Build Something{" "}
+              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                Let&apos;s Build{" "}
                 <span className="gradient-text">Together</span>
               </h1>
               <p className="mt-6 text-lg leading-8 text-slate-400">
@@ -56,14 +98,14 @@ export default function ContactPage() {
                 typically respond within 24 hours.
               </p>
             </AnimatedSection>
-          </div>
+          </Container>
         </section>
 
         <section className="px-4 py-24 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <div className="grid gap-12 lg:grid-cols-3">
-              <AnimatedSection className="lg:col-span-1">
-                <div className="rounded-3xl glass-card p-8">
+          <Container>
+            <div className="grid gap-12 lg:grid-cols-5">
+              <AnimatedSection className="lg:col-span-2">
+                <div className="glass-card rounded-3xl p-8">
                   <h2 className="text-2xl font-bold text-white">
                     Get in Touch
                   </h2>
@@ -93,21 +135,53 @@ export default function ContactPage() {
                         </div>
                       </div>
                     ))}
+                    <div className="flex items-start gap-4">
+                      <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10">
+                        <Clock className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white">
+                          Response Time
+                        </p>
+                        <p className="text-slate-400">
+                          Usually within 24 hours
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="mt-10 rounded-2xl bg-gradient-to-br from-indigo-950/80 to-slate-900/80 p-6 text-white ring-1 ring-white/10 backdrop-blur-xl">
-                    <h3 className="text-lg font-bold">Free Strategy Call</h3>
+                    <div className="flex items-center gap-3">
+                      <Calendar className="h-5 w-5 text-cyan-400" />
+                      <h3 className="text-lg font-bold">Free Strategy Call</h3>
+                    </div>
                     <p className="mt-2 text-sm text-slate-400">
                       30 minutes to map your project, identify the best starting
                       point, and get a rough estimate.
                     </p>
+                    <div className="mt-5">
+                      <Button
+                        href="mailto:hello@mot.id?subject=Book%20a%20Free%20Strategy%20Call"
+                        variant="secondary"
+                        className="w-full text-sm"
+                        icon={<ArrowRight className="h-4 w-4" />}
+                      >
+                        Book a Call
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection delay={0.2} className="lg:col-span-2">
-                <div className="rounded-3xl glass-card p-8 sm:p-12">
-                  <h2 className="text-2xl font-bold text-white">
+              <AnimatedSection delay={0.2} className="lg:col-span-3">
+                <div className="glass-card rounded-3xl p-8 sm:p-12">
+                  <div className="flex items-center gap-3">
+                    <Pill>Form</Pill>
+                    <span className="text-sm text-slate-500">
+                      All fields required unless marked optional
+                    </span>
+                  </div>
+                  <h2 className="mt-4 text-2xl font-bold text-white">
                     Send an Inquiry
                   </h2>
                   <p className="mt-4 text-slate-400">
@@ -120,7 +194,39 @@ export default function ContactPage() {
                 </div>
               </AnimatedSection>
             </div>
-          </div>
+          </Container>
+        </section>
+
+        <section className="relative px-4 py-24 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-slate-900/30 to-slate-950" />
+          <Container>
+            <AnimatedSection className="mx-auto max-w-3xl">
+              <SectionHeader
+                label="FAQ"
+                heading="Quick"
+                headingAccent="Answers"
+                description="A few common questions before you reach out."
+              />
+              <div className="mt-12 space-y-4">
+                {faqs.map((faq, index) => (
+                  <details
+                    key={index}
+                    className="group glass-card rounded-2xl"
+                  >
+                    <summary className="flex cursor-pointer items-center justify-between p-6 text-white marker:hidden list-none">
+                      <span className="text-base font-semibold">
+                        {faq.question}
+                      </span>
+                      <ChevronDown className="h-5 w-5 flex-shrink-0 text-slate-500 transition-transform group-open:rotate-180" />
+                    </summary>
+                    <div className="px-6 pb-6 text-slate-400">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </AnimatedSection>
+          </Container>
         </section>
       </main>
       <Footer />

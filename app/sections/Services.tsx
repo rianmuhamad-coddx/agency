@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Bot, Globe } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 
 const services = [
@@ -36,17 +38,15 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative px-4 py-24 sm:px-6 lg:px-8">
+    <section id="services" className="relative py-24 sm:py-32">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950" />
-      <div className="mx-auto max-w-7xl">
-        <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
-            What We Build
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Two Services. One Team.{" "}
-            <span className="gradient-text">Zero Headaches.</span>
-          </h2>
+      <Container>
+        <AnimatedSection>
+          <SectionHeader
+            label="What We Build"
+            heading="Two Services. One Team."
+            headingAccent="Zero Headaches."
+          />
         </AnimatedSection>
 
         <StaggerContainer className="mt-16 grid gap-8 lg:grid-cols-2">
@@ -85,7 +85,7 @@ export default function Services() {
             </StaggerItem>
           ))}
         </StaggerContainer>
-      </div>
+      </Container>
     </section>
   );
 }

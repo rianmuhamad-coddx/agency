@@ -1,19 +1,19 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { GlowOrb } from "@/components/ui/GlowOrb";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden px-4 pb-24 pt-36 sm:px-6 lg:px-8 lg:pb-32 lg:pt-44">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 blur-3xl" />
-        <div className="absolute right-0 top-1/3 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-violet-500/10 blur-3xl" />
-      </div>
+    <section className="relative overflow-hidden pb-24 pt-36 lg:pb-32 lg:pt-44">
+      <GlowOrb color="indigo" size={700} className="left-1/2 top-0 -translate-x-1/2 -translate-y-1/2" />
+      <GlowOrb color="cyan" size={500} className="right-0 top-1/3 -translate-y-1/2" />
+      <GlowOrb color="violet" size={400} className="bottom-0 left-0" />
 
-      <div className="mx-auto max-w-7xl text-center">
+      <Container className="text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mx-auto max-w-4xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
+          className="mx-auto max-w-4xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl"
         >
           We Build the{" "}
           <span className="gradient-text">Intelligence</span> Behind Your
@@ -51,20 +51,22 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <Link
-            href="/contact"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 px-8 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-500/40"
-          >
+          <Button variant="primary" href="/contact" icon={<ArrowRight className="h-5 w-5" />}>
             Book a Free Strategy Call
-            <ArrowRight className="h-5 w-5" />
-          </Link>
-          <Link
-            href="#portfolio"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 px-8 text-base font-semibold text-white backdrop-blur-md transition-colors hover:bg-slate-800/50"
-          >
+          </Button>
+          <Button variant="secondary" href="#portfolio">
             See Our Work
-          </Link>
+          </Button>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-5 text-sm font-medium text-slate-500"
+        >
+          Trusted by early-stage founders
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -81,14 +83,14 @@ export default function Hero() {
               key={item.label}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
-              className="glass-card rounded-2xl p-5"
+              className="glass-card cursor-default rounded-2xl p-5"
             >
               <p className="font-semibold text-white">{item.label}</p>
               <p className="mt-1 text-sm text-slate-400">{item.desc}</p>
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 }
