@@ -34,7 +34,7 @@ export default function About() {
               align="left"
               className="max-w-none text-left"
             />
-            <div className="mt-8 space-y-4 text-lg leading-8 text-slate-400">
+            <div className="mt-8 space-y-4 text-lg leading-8 text-zinc-400">
               <p>
                 MOT is a small, hands-on agency. We don&apos;t chase volume — we
                 partner with founders who need real tech built fast. From AI
@@ -65,7 +65,7 @@ export default function About() {
                   <p className="font-mono text-4xl font-bold tracking-tight text-white">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-sm font-medium text-slate-400">
+                  <p className="mt-2 text-sm font-medium text-zinc-400">
                     {stat.label}
                   </p>
                 </motion.div>

@@ -62,8 +62,8 @@ export default function Portfolio() {
                   href={`/portfolio/${project.slug}`}
                   className="group flex flex-col overflow-hidden rounded-3xl glass-card h-full"
                 >
-                  <div className="relative flex aspect-[16/10] items-center justify-center bg-gradient-to-br from-indigo-500/10 via-slate-900/50 to-cyan-500/10">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10 transition-all duration-300 group-hover:from-indigo-500/30 group-hover:to-cyan-500/30 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan-500/10">
+                  <div className="relative flex aspect-[16/10] items-center justify-center bg-gradient-to-br from-white/5 via-black/50 to-white/5">
+                    <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-white/5 to-white/10 text-white ring-1 ring-white/10 transition-all duration-300 group-hover:from-indigo-500/30 group-hover:to-cyan-500/30 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-white/5">
                       <project.icon className="h-10 w-10" />
                     </div>
                   </div>
@@ -73,10 +73,10 @@ export default function Portfolio() {
                     <h3 className="mt-4 text-xl font-bold text-white">
                       {project.title}
                     </h3>
-                    <p className="mt-3 flex-1 text-base leading-7 text-slate-400">
+                    <p className="mt-3 flex-1 text-base leading-7 text-zinc-400">
                       {project.description}
                     </p>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 group-hover:text-cyan-300">
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white group-hover:text-zinc-300">
                       Read case study
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>

@@ -20,16 +20,16 @@ export function SectionHeader({
   return (
     <div className={cn(align === "center" && "mx-auto max-w-3xl text-center", className)}>
       {label && (
-        <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
+        <p className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
           {label}
         </p>
       )}
       <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
         {heading}{" "}
-        {headingAccent && <span className="gradient-text">{headingAccent}</span>}
+        {headingAccent && <span className="text-white">{headingAccent}</span>}
       </h2>
       {description && (
-        <p className="mt-4 text-lg text-slate-400">{description}</p>
+        <p className="mt-4 text-lg text-zinc-400">{description}</p>
       )}
     </div>
   );

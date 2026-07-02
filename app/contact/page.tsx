@@ -86,14 +86,14 @@ export default function ContactPage() {
           />
           <Container>
             <AnimatedSection className="mx-auto max-w-4xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
+              <p className="text-sm font-semibold uppercase tracking-wide text-white">
                 Contact
               </p>
               <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
                 Let&apos;s Build{" "}
                 <span className="gradient-text">Together</span>
               </h1>
-              <p className="mt-6 text-lg leading-8 text-slate-400">
+              <p className="mt-6 text-lg leading-8 text-zinc-400">
                 Book a free 30-minute strategy call or send us an inquiry. We
                 typically respond within 24 hours.
               </p>
@@ -109,13 +109,13 @@ export default function ContactPage() {
                   <h2 className="text-2xl font-bold text-white">
                     Get in Touch
                   </h2>
-                  <p className="mt-4 text-slate-400">
+                  <p className="mt-4 text-zinc-400">
                     Prefer to reach out directly? Use the contact info below.
                   </p>
                   <div className="mt-8 space-y-6">
                     {contactInfo.map((item) => (
                       <div key={item.label} className="flex items-start gap-4">
-                        <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10">
+                        <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-white/5 to-white/10 text-white ring-1 ring-white/10">
                           <item.icon className="h-5 w-5" />
                         </div>
                         <div>
@@ -125,37 +125,37 @@ export default function ContactPage() {
                           {item.href ? (
                             <a
                               href={item.href}
-                              className="text-slate-400 transition-colors hover:text-cyan-400"
+                              className="text-zinc-400 transition-colors hover:text-white"
                             >
                               {item.value}
                             </a>
                           ) : (
-                            <p className="text-slate-400">{item.value}</p>
+                            <p className="text-zinc-400">{item.value}</p>
                           )}
                         </div>
                       </div>
                     ))}
                     <div className="flex items-start gap-4">
-                      <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10">
+                      <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-white/5 to-white/10 text-white ring-1 ring-white/10">
                         <Clock className="h-5 w-5" />
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-white">
                           Response Time
                         </p>
-                        <p className="text-slate-400">
+                        <p className="text-zinc-400">
                           Usually within 24 hours
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-10 rounded-2xl bg-gradient-to-br from-indigo-950/80 to-slate-900/80 p-6 text-white ring-1 ring-white/10 backdrop-blur-xl">
+                  <div className="mt-10 rounded-2xl bg-gradient-to-br from-zinc-950/80 to-black/80 p-6 text-white ring-1 ring-white/10 backdrop-blur-xl">
                     <div className="flex items-center gap-3">
-                      <Calendar className="h-5 w-5 text-cyan-400" />
+                      <Calendar className="h-5 w-5 text-white" />
                       <h3 className="text-lg font-bold">Free Strategy Call</h3>
                     </div>
-                    <p className="mt-2 text-sm text-slate-400">
+                    <p className="mt-2 text-sm text-zinc-400">
                       30 minutes to map your project, identify the best starting
                       point, and get a rough estimate.
                     </p>
@@ -177,14 +177,14 @@ export default function ContactPage() {
                 <div className="glass-card rounded-3xl p-8 sm:p-12">
                   <div className="flex items-center gap-3">
                     <Pill>Form</Pill>
-                    <span className="text-sm text-slate-500">
+                    <span className="text-sm text-zinc-500">
                       All fields required unless marked optional
                     </span>
                   </div>
                   <h2 className="mt-4 text-2xl font-bold text-white">
                     Send an Inquiry
                   </h2>
-                  <p className="mt-4 text-slate-400">
+                  <p className="mt-4 text-zinc-400">
                     Tell us about your project. The more details, the better we
                     can help.
                   </p>
@@ -217,9 +217,9 @@ export default function ContactPage() {
                       <span className="text-base font-semibold">
                         {faq.question}
                       </span>
-                      <ChevronDown className="h-5 w-5 flex-shrink-0 text-slate-500 transition-transform group-open:rotate-180" />
+                      <ChevronDown className="h-5 w-5 flex-shrink-0 text-zinc-500 transition-transform group-open:rotate-180" />
                     </summary>
-                    <div className="px-6 pb-6 text-slate-400">
+                    <div className="px-6 pb-6 text-zinc-400">
                       {faq.answer}
                     </div>
                   </details>

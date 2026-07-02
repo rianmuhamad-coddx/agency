@@ -38,12 +38,12 @@ export default function Footer() {
               href="/"
               className="flex items-center gap-2 text-xl font-bold tracking-tight text-white"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 text-white shadow-lg shadow-indigo-500/25">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br bg-white text-black text-white shadow-lg shadow-white/10">
                 M
               </span>
               MOT
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-zinc-400">
               Premium AI agents and web experiences for early-stage startups
               that need to move fast.
             </p>
@@ -59,7 +59,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
+                    className="text-sm text-zinc-400 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-cyan-400"
+                    className="text-sm text-zinc-400 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -95,11 +95,11 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               {contactInfo.map((item) => (
                 <li key={item.label} className="text-sm">
-                  <span className="block text-slate-500">{item.label}</span>
+                  <span className="block text-zinc-500">{item.label}</span>
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="text-slate-300 transition-colors hover:text-cyan-400"
+                      className="text-slate-300 transition-colors hover:text-white"
                     >
                       {item.value}
                     </a>
@@ -113,7 +113,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-slate-800/50 pt-8 text-center">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-zinc-500">
             © {new Date().getFullYear()} MOT. All rights reserved.
           </p>
         </div>

@@ -23,10 +23,10 @@ export function Button({
     "inline-flex h-12 items-center justify-center gap-2 rounded-full px-8 text-base font-semibold transition-all";
   const variants = {
     primary:
-      "bg-gradient-to-r from-indigo-600 to-cyan-600 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02]",
+      "bg-white text-black shadow-lg shadow-white/10 hover:bg-zinc-200 hover:scale-[1.02]",
     secondary:
-      "border border-slate-700 bg-slate-900/50 text-white backdrop-blur-md hover:bg-slate-800/50",
-    ghost: "text-cyan-400 hover:text-cyan-300",
+      "border border-white/20 bg-white/5 text-white backdrop-blur-md hover:bg-white/10",
+    ghost: "text-white hover:text-zinc-300",
   };
 
   const content = (

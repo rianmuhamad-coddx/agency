@@ -18,7 +18,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-700/50 bg-slate-900/50 px-4 py-1.5 text-sm font-medium text-cyan-400 shadow-lg backdrop-blur-md"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-700/50 bg-slate-900/50 px-4 py-1.5 text-sm font-medium text-white shadow-lg backdrop-blur-md"
         >
           <Sparkles className="h-4 w-4" />
           AI Agentic & Web Development Agency
@@ -39,7 +39,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400 sm:text-xl"
+          className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-400 sm:text-xl"
         >
           MOT helps early-stage startups ship agentic AI systems and
           high-converting websites — without hiring a full tech team.
@@ -63,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-5 text-sm font-medium text-slate-500"
+          className="mt-5 text-sm font-medium text-zinc-500"
         >
           Trusted by early-stage founders
         </motion.p>
@@ -86,7 +86,7 @@ export default function Hero() {
               className="glass-card cursor-default rounded-2xl p-5"
             >
               <p className="font-semibold text-white">{item.label}</p>
-              <p className="mt-1 text-sm text-slate-400">{item.desc}</p>
+              <p className="mt-1 text-sm text-zinc-400">{item.desc}</p>
             </motion.div>
           ))}
         </motion.div>

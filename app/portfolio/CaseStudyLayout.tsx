@@ -72,17 +72,17 @@ export function CaseStudyLayout({
               <AnimatedSection>
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-zinc-300"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Back to Portfolio
                 </Link>
-                <Pill className="mt-8 text-cyan-400">{category}</Pill>
+                <Pill className="mt-8 text-white">{category}</Pill>
                 <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
                   {title}{" "}
                   <span className="gradient-text">{accentWord}</span>
                 </h1>
-                <p className="mt-6 text-lg leading-8 text-slate-400">
+                <p className="mt-6 text-lg leading-8 text-zinc-400">
                   {description}
                 </p>
               </AnimatedSection>
@@ -101,9 +101,9 @@ export function CaseStudyLayout({
                     gradientTo
                   )}
                 >
-                  {Icon && <Icon className="h-12 w-12 text-cyan-400" />}
+                  {Icon && <Icon className="h-12 w-12 text-white" />}
                   <h2 className="mt-6 text-2xl font-bold">The Challenge</h2>
-                  <p className="mt-4 text-slate-400">{challenge}</p>
+                  <p className="mt-4 text-zinc-400">{challenge}</p>
                 </div>
               </AnimatedSection>
 
@@ -117,7 +117,7 @@ export function CaseStudyLayout({
                 <ul className="mt-6 space-y-4">
                   {highlights.map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-cyan-400" />
+                      <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-white" />
                       <span className="text-slate-300">{item}</span>
                     </li>
                   ))}
@@ -137,7 +137,7 @@ export function CaseStudyLayout({
 
               <AnimatedSection delay={0.4} className="mt-12">
                 <h2 className="text-2xl font-bold text-white">Results</h2>
-                <p className="mt-4 text-lg leading-8 text-slate-400">
+                <p className="mt-4 text-lg leading-8 text-zinc-400">
                   {results}
                 </p>
               </AnimatedSection>

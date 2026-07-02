@@ -57,14 +57,14 @@ export default function Testimonials() {
                 </p>
 
                 <div className="mt-8 flex items-center gap-4 border-t border-slate-700/30 pt-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 text-base font-bold text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br bg-white text-black text-base font-bold text-white">
                     {item.name[0]}
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-white">
                       {item.name}
                     </p>
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-zinc-400">
                       {item.role}, {item.company}
                     </p>
                   </div>

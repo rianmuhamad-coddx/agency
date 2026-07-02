@@ -10,7 +10,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 export default function CTA() {
   return (
     <section id="contact" className="relative overflow-hidden py-24 sm:py-32">
-      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-indigo-950 via-slate-950 to-cyan-950" />
+      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-zinc-950 via-black to-zinc-950" />
 
       <GlowOrb
         color="indigo"
@@ -45,11 +45,11 @@ export default function CTA() {
               </Button>
             </div>
 
-            <p className="mt-6 text-sm text-slate-400">
+            <p className="mt-6 text-sm text-zinc-400">
               Prefer email? Reach us at{" "}
               <a
                 href="mailto:hello@mot.id"
-                className="font-semibold text-cyan-400 hover:text-cyan-300"
+                className="font-semibold text-white hover:text-zinc-300"
               >
                 hello@mot.id
               </a>

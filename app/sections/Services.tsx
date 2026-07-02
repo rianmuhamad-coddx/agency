@@ -57,26 +57,26 @@ export default function Services() {
                 transition={{ duration: 0.3 }}
                 className="glass-card group relative flex flex-col rounded-3xl p-8 h-full"
               >
-                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 text-cyan-400 ring-1 ring-white/10">
+                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-white/5 to-white/10 text-white ring-1 ring-white/10">
                   <service.icon className="h-7 w-7" />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold text-white">
                   {service.title}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-slate-400">
+                <p className="mt-4 text-base leading-7 text-zinc-400">
                   {service.description}
                 </p>
                 <ul className="mt-6 space-y-3">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-slate-300">
-                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-cyan-400" />
+                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-white" />
                       {item}
                     </li>
                   ))}
                 </ul>
                 <Link
                   href={service.href}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-colors group-hover:text-cyan-300"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors group-hover:text-zinc-300"
                 >
                   {service.cta}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

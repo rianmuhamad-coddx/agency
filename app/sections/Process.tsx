@@ -63,16 +63,16 @@ export default function Process() {
                     className="glass-card w-full rounded-2xl p-6"
                   >
                     <div className="flex flex-col items-center">
-                      <span className="font-mono text-sm font-semibold uppercase tracking-wide text-cyan-400">
+                      <span className="font-mono text-sm font-semibold uppercase tracking-wide text-white">
                         Step {item.step}
                       </span>
-                      <div className="relative mt-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-600 text-white shadow-lg shadow-indigo-500/25">
+                      <div className="relative mt-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br bg-white text-black text-white shadow-lg shadow-white/10">
                         <item.icon className="h-6 w-6" />
                       </div>
                       <h3 className="mt-4 text-lg font-bold text-white">
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                      <p className="mt-3 text-sm leading-relaxed text-zinc-400">
                         {item.description}
                       </p>
                     </div>

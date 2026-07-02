@@ -17,9 +17,9 @@ export function GlowOrb({
   animate = true,
 }: GlowOrbProps) {
   const colors = {
-    indigo: "bg-indigo-500/10",
-    cyan: "bg-cyan-500/10",
-    violet: "bg-violet-500/10",
+    indigo: "bg-white/5",
+    cyan: "bg-white/5",
+    violet: "bg-white/5",
   };
 
   return (

@@ -84,7 +84,7 @@ export default function AboutPage() {
           />
           <Container>
             <AnimatedSection className="mx-auto max-w-4xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-wide text-cyan-400">
+              <p className="text-sm font-semibold uppercase tracking-wide text-white">
                 About MOT
               </p>
               <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 <span className="gradient-text">Intelligence</span> Behind Your
                 Startup
               </h1>
-              <p className="mt-6 text-lg leading-8 text-slate-400">
+              <p className="mt-6 text-lg leading-8 text-zinc-400">
                 MOT (Mind of Things) is a technology agency specializing in
                 agentic AI and web development for startups. We are not a
                 platform. We are a small, hands-on team that works directly with
@@ -114,7 +114,7 @@ export default function AboutPage() {
                   align="left"
                   className="max-w-none text-left"
                 />
-                <div className="mt-8 space-y-4 text-lg leading-8 text-slate-400">
+                <div className="mt-8 space-y-4 text-lg leading-8 text-zinc-400">
                   <p>
                     Too many great startup ideas stall because the founder lacks
                     the time, team, or budget to build the technology behind it.
@@ -137,11 +137,11 @@ export default function AboutPage() {
                 {values.map((value) => (
                   <StaggerItem key={value.title}>
                     <div className="glass-card rounded-2xl p-6 h-full">
-                      <value.icon className="h-8 w-8 text-cyan-400" />
+                      <value.icon className="h-8 w-8 text-white" />
                       <h3 className="mt-4 text-lg font-semibold text-white">
                         {value.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                      <p className="mt-2 text-sm leading-relaxed text-zinc-400">
                         {value.desc}
                       </p>
                     </div>
@@ -168,7 +168,7 @@ export default function AboutPage() {
                     <p className="font-mono text-4xl font-bold tracking-tight text-white">
                       {stat.value}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-slate-400">
+                    <p className="mt-2 text-sm font-medium text-zinc-400">
                       {stat.label}
                     </p>
                   </div>
@@ -194,16 +194,16 @@ export default function AboutPage() {
               {team.map((member) => (
                 <StaggerItem key={member.name}>
                   <div className="glass-card rounded-3xl p-8 text-center">
-                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 text-2xl font-bold text-white shadow-lg shadow-indigo-500/25">
+                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br bg-white text-black text-2xl font-bold text-white shadow-lg shadow-white/10">
                       {member.name[0]}
                     </div>
                     <h3 className="mt-6 text-xl font-bold text-white">
                       {member.name}
                     </h3>
-                    <p className="text-sm font-medium text-cyan-400">
+                    <p className="text-sm font-medium text-white">
                       {member.role}
                     </p>
-                    <p className="mt-4 text-sm text-slate-400">{member.bio}</p>
+                    <p className="mt-4 text-sm text-zinc-400">{member.bio}</p>
                   </div>
                 </StaggerItem>
               ))}
@@ -212,7 +212,7 @@ export default function AboutPage() {
         </section>
 
         <section className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-indigo-950 via-slate-950 to-cyan-950" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-zinc-950 via-black to-zinc-950" />
           <GlowOrb
             color="cyan"
             size={500}

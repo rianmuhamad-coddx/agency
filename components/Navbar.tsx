@@ -46,8 +46,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 z-50 w-full border-b transition-all duration-300 ${
         scrolled
-          ? "border-slate-700/50 glass-strong"
-          : "border-slate-800/50 bg-slate-950/30 backdrop-blur-md"
+          ? "border-white/10 glass-strong"
+          : "border-white/10 bg-black/30 backdrop-blur-md"
       }`}
     >
       <Container className="flex h-16 items-center justify-between">
@@ -55,7 +55,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-2 text-xl font-bold tracking-tight text-white"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 text-white shadow-lg shadow-indigo-500/25">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br bg-white text-black text-white shadow-lg shadow-white/10">
             M
           </span>
           MOT
@@ -72,7 +72,7 @@ export default function Navbar() {
               >
                 <button
                   type="button"
-                  className="flex items-center gap-1 text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white"
+                  className="flex items-center gap-1 text-sm font-medium text-zinc-300 transition-colors duration-200 hover:text-white"
                 >
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
@@ -84,13 +84,13 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full mt-2 w-56 rounded-xl border border-slate-700/50 bg-slate-900/90 py-2 shadow-xl backdrop-blur-xl"
+                      className="absolute left-0 top-full mt-2 w-56 rounded-xl border border-white/10 bg-black/90 py-2 shadow-xl backdrop-blur-xl"
                     >
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-4 py-2 text-sm font-medium text-slate-300 transition-colors duration-200 hover:bg-slate-800/50 hover:text-white"
+                          className="block px-4 py-2 text-sm font-medium text-zinc-300 transition-colors duration-200 hover:bg-white/5 hover:text-white"
                         >
                           {child.label}
                         </Link>
@@ -103,7 +103,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white"
+                className="text-sm font-medium text-zinc-300 transition-colors duration-200 hover:text-white"
               >
                 {link.label}
               </Link>
@@ -113,13 +113,13 @@ export default function Navbar() {
             <>
               <Link
                 href={handleHomeAnchor("#process")}
-                className="text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white"
+                className="text-sm font-medium text-zinc-300 transition-colors duration-200 hover:text-white"
               >
                 Process
               </Link>
               <Link
                 href={handleHomeAnchor("#testimonials")}
-                className="text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white"
+                className="text-sm font-medium text-zinc-300 transition-colors duration-200 hover:text-white"
               >
                 Testimonials
               </Link>
@@ -135,7 +135,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-slate-300 md:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-zinc-300 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -144,7 +144,7 @@ export default function Navbar() {
       </Container>
 
       {isOpen && (
-        <div className="border-t border-slate-800/50 bg-slate-950/95 backdrop-blur-xl md:hidden">
+        <div className="border-t border-white/10 bg-black/95 backdrop-blur-xl md:hidden">
           <Container>
             <div className="space-y-1 py-4">
                 {navLinks.map((link) =>
@@ -157,7 +157,7 @@ export default function Navbar() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block rounded-md px-6 py-2 text-sm font-medium text-slate-300 transition-colors duration-200 hover:bg-slate-800/50 hover:text-white"
+                        className="block rounded-md px-6 py-2 text-sm font-medium text-zinc-300 transition-colors duration-200 hover:bg-white/5 hover:text-white"
                         onClick={() => setIsOpen(false)}
                       >
                         {child.label}
@@ -168,7 +168,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 transition-colors duration-200 hover:bg-slate-800/50 hover:text-white"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-zinc-300 transition-colors duration-200 hover:bg-white/5 hover:text-white"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
@@ -179,14 +179,14 @@ export default function Navbar() {
                 <>
                   <Link
                     href={handleHomeAnchor("#process")}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 transition-colors duration-200 hover:bg-slate-800/50 hover:text-white"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-zinc-300 transition-colors duration-200 hover:bg-white/5 hover:text-white"
                     onClick={() => setIsOpen(false)}
                   >
                     Process
                   </Link>
                   <Link
                     href={handleHomeAnchor("#testimonials")}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 transition-colors duration-200 hover:bg-slate-800/50 hover:text-white"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-zinc-300 transition-colors duration-200 hover:bg-white/5 hover:text-white"
                     onClick={() => setIsOpen(false)}
                   >
                     Testimonials
